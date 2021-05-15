@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="navbar fixed-top navbar-lg py-3">
+<nav class="navbar fixed-top navbar-expand-sm py-3" id="navbar">
     <div class="container">
         <div class="navbar-brand">
             <h2 class="font-weight-bold">
                 <a href="#">dienoov<span class="text-primary">.</span></a>
             </h2>
         </div>
-        <div class="navbar-collapse">
+        <button class="navbar-toggler" id="navbar-toggler">
+            <div class="navbar-toggler-icon"></div>
+        </button>
+        <div class="navbar-collapse" id="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="#" class="nav-link active">About</a>
@@ -46,7 +49,7 @@
     <div class="container">
         <h2 class="title text-primary text-uppercase">Let's Get Acquainted</h2>
         <div class="row">
-            <div class="col-lg-6 mt-5">
+            <div class="col-sm-6 mt-5">
                 <p>
                     Hi, my name is Alvino Dienova, a full stack web developer based in Indonesia. With passion for
                     well-crafted (digital) experiences, I believe in beauty to empower ideas.
@@ -57,7 +60,7 @@
                     and refined execution to deliver premium results. Basically I like creating cool stuff.
                 </p>
             </div>
-            <div class="col-lg-6 mt-5">
+            <div class="col-sm-6 mt-5">
                 <p class="text-muted">
                     Currently I'm working as a freelance Full Stack Web Developer & accepting new projects from January
                     2021 onwards. I'm always available for interesting collaborations and fun side projects. If you
@@ -67,5 +70,6 @@
         </div>
     </div>
 </div>
+<script src="js/script.js"></script>
 </body>
 </html>
