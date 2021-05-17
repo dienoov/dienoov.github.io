@@ -45,8 +45,18 @@ const awardOnScroll = () => {
     }
 };
 
+const career = document.getElementById("career");
+const careerOnScroll = () => {
+    if (scrollY + screen.height > career.offsetTop + 144) {
+        career.classList.add("scroll");
+    } else {
+        career.classList.remove("scroll");
+    }
+};
+
 window.addEventListener("load", loaded);
 document.addEventListener("scroll", navbarOnScroll);
 document.addEventListener("scroll", aboutOnScroll);
 document.addEventListener("scroll", awardOnScroll);
+document.addEventListener("scroll", careerOnScroll);
 navbarToggler.addEventListener("click", toggleNavbar);

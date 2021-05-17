@@ -361,7 +361,7 @@ a {
     z-index: 1;
     transition-property: background-color, padding;
     transition-duration: .3s;
-    transition-timing-function: ease;
+    transition-timing-function: ease-out;
 }
 
 .navbar-brand {
@@ -383,7 +383,7 @@ a {
     display: block;
     transition-property: transform, opacity;
     transition-duration: .3s;
-    transition-timing-function: ease;
+    transition-timing-function: ease-out;
 }
 
 .navbar-toggler-icon::before {
@@ -420,7 +420,7 @@ a {
 
 .nav-link {
     opacity: .7;
-    transition: color .15s ease;
+    transition: color .15s ease-out;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -439,7 +439,7 @@ a {
         transform: translate(100%);
         transition-property: transform, background-color;
         transition-duration: .3s;
-        transition-timing-function: ease;
+        transition-timing-function: ease-out;
     }
 
     .navbar-expand-sm .navbar-nav {
@@ -508,7 +508,7 @@ a {
 
 .name h1, .name h1::before, .name h1::after {
     display: block;
-    transition: transform .3s ease .8s;
+    transition: transform .3s ease-out .8s;
 }
 
 .loaded .name h1::before, .loaded .name h1::after {
@@ -552,7 +552,7 @@ a {
     width: 45vw;
     height: 2.25rem;
     transform: translate(100%);
-    transition: transform .3s ease 1.2s;
+    transition: transform .3s ease-out 1.2s;
 }
 
 .avatar::after {
@@ -565,7 +565,7 @@ a {
     width: 50vw;
     height: 2.25rem;
     transform: translate(-100%);
-    transition: transform .3s ease 1.2s;
+    transition: transform .3s ease-out 1.2s;
 }
 
 .loaded .avatar::before, .loaded .avatar::after {
@@ -618,13 +618,13 @@ h2.title {
     font-weight: 400;
 }
 
-.about {
+.about .container {
     overflow-x: hidden;
 }
 
 .about h2.title {
-    transform: translate(-100vw);
-    transition: transform .3s ease;
+    transform: translate(-100%);
+    transition: transform .3s ease-out;
 }
 
 .about h2.title::after {
@@ -634,8 +634,8 @@ h2.title {
     background-color: currentColor;
     display: block;
     margin-top: 2rem;
-    transform: translate(225vw);
-    transition: transform .3s ease;
+    transform: translate(250%);
+    transition: transform .6s ease-out;
 }
 
 .about .row {
@@ -644,12 +644,16 @@ h2.title {
 
 .about .row .col-sm-6 {
     transform: translateY(100%);
-    transition: transform .3s ease 0s;
+    transition: transform .3s ease-out 0s;
     overflow-y: hidden;
 }
 
 .about.scroll h2.title, .about.scroll h2.title::after {
     transform: translate(0);
+}
+
+.about.scroll h2.title::after {
+    transition-delay: .3s;
 }
 
 .about.scroll .row .col-sm-6:first-child {
@@ -668,14 +672,14 @@ h2.title {
     }
 }
 
-.award {
+.award .container {
     overflow-x: hidden;
 }
 
 .award h2.title {
     white-space: nowrap;
-    transform: translate(-100vw);
-    transition: transform .3s ease;
+    transform: translate(-125%);
+    transition: transform .3s ease-out;
 }
 
 .award .line {
@@ -685,8 +689,8 @@ h2.title {
     opacity: .1;
     height: .1rem;
     margin-left: 5rem;
-    transform: translate(225vw);
-    transition: transform .3s ease;
+    transform: translate(250%);
+    transition: transform .3s ease-out;
 }
 
 .award img {
@@ -717,7 +721,7 @@ h2.title {
 
 .award li {
     transform: translateY(1000%);
-    transition: transform .2s ease;
+    transition: transform .3s ease-out;
 }
 
 .award.scroll h2.title, .award.scroll .line {
@@ -729,15 +733,15 @@ h2.title {
 }
 
 .award.scroll li:nth-child(1) {
-    transition-delay: .2s;
+    transition-delay: .3s;
 }
 
 .award.scroll li:nth-child(2) {
-    transition-delay: .4s;
+    transition-delay: .6s;
 }
 
 .award.scroll li:nth-child(3) {
-    transition-delay: .6s;
+    transition-delay: .9s;
 }
 
 @media screen and (max-width: 576px) {
@@ -754,8 +758,19 @@ h2.title {
     }
 }
 
+.career .container {
+    overflow: hidden;
+}
+
+.career h2.title {
+    transform: translate(-100%);
+    transition: transform .3s ease-out;
+}
+
 .career .timeline {
     position: relative;
+    transform: translateY(200%);
+    transition: transform .3s ease-out;
 }
 
 .career .timeline > * {
@@ -785,7 +800,6 @@ h2.title {
     width: .1rem;
     height: 100%;
     background-color: var(--primary);
-    transform: translate(-50%);
 }
 
 .career .timeline .title::after {
@@ -804,6 +818,22 @@ h2.title {
 .career .timeline img {
     height: 10rem;
     width: auto;
+}
+
+.career.scroll h2.title {
+    transform: translate(0);
+}
+
+.career.scroll .timeline {
+    transform: translate(0);
+}
+
+.career.scroll .timeline:nth-child(2) {
+    transition-delay: .3s;
+}
+
+.career.scroll .timeline:nth-child(3) {
+    transition-delay: .6s;
 }
 
 @media screen and (max-width: 992px) {
@@ -855,7 +885,7 @@ h2.title {
     align-items: center;
     justify-content: center;
     z-index: 2;
-    transition: transform .3s ease .4s;
+    transition: transform .3s ease-out .4s;
 }
 
 .preloader .wrapper {
@@ -867,7 +897,7 @@ h2.title {
     font-size: 2rem;
     overflow: hidden;
     display: block;
-    transition: transform .3s ease;
+    transition: transform .3s ease-out;
 }
 
 .preloader span::after {
