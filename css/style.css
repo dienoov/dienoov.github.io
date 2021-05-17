@@ -704,7 +704,7 @@ h2.title {
     width: auto;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     .career .timeline::before, .career .timeline::after {
         left: 2.5rem;
     }
@@ -730,4 +730,41 @@ h2.title {
     .career .timeline img {
         height: 8rem;
     }
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: transform .3s ease .4s;
+}
+
+.preloader .wrapper {
+    height: 3rem;
+    overflow: hidden;
+}
+
+.preloader span {
+    font-size: 2rem;
+    overflow: hidden;
+    display: block;
+    transition: transform .3s ease;
+}
+
+.preloader span::after {
+    content: "loading";
+    display: block;
+}
+
+.loaded .preloader {
+    transform: translateY(-100%);
+}
+
+.loaded .preloader span {
+    transform: translateY(-50%);
 }

@@ -1,5 +1,6 @@
-const navbar = document.getElementById("navbar");
+const loaded = () => document.body.classList.add("loaded");
 
+const navbar = document.getElementById("navbar");
 const navbarOnScroll = () => {
     if (window.scrollY > 50) {
         navbar.classList.add("bg-light");
@@ -10,14 +11,13 @@ const navbarOnScroll = () => {
     }
 };
 
-document.addEventListener("scroll", navbarOnScroll);
-
 const navbarToggler = document.getElementById("navbar-toggler");
 const navbarCollapse = document.getElementById("navbar-collapse");
-
 const toggleNavbar = () => {
     navbarToggler.classList.toggle("active");
     navbarCollapse.classList.toggle("active");
 };
 
+window.addEventListener("load", loaded);
+document.addEventListener("scroll", navbarOnScroll);
 navbarToggler.addEventListener("click", toggleNavbar);
