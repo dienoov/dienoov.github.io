@@ -2,7 +2,10 @@ const loaded = () => {
     document.body.classList.add("loaded")
 
     if (screen.width < screen.height) {
-        setTimeout(() => aboutOnScroll(true), 1500);
+        setTimeout(() => {
+            document.removeEventListener("scroll", aboutOnScroll);
+            about.classList.add("scroll");
+        }, 1500);
     }
 };
 
@@ -25,15 +28,25 @@ const toggleNavbar = () => {
 };
 
 const about = document.getElementById("about");
-const aboutOnScroll = (toggle = false) => {
-    if (scrollY > about.offsetTop / 3 || toggle) {
+const aboutOnScroll = () => {
+    if (scrollY + screen.height > about.offsetTop + 144) {
         about.classList.add("scroll");
     } else {
         about.classList.remove("scroll");
     }
 };
 
+const award = document.getElementById("award");
+const awardOnScroll = () => {
+    if (scrollY + screen.height > award.offsetTop + 144) {
+        award.classList.add("scroll");
+    } else {
+        award.classList.remove("scroll");
+    }
+};
+
 window.addEventListener("load", loaded);
 document.addEventListener("scroll", navbarOnScroll);
 document.addEventListener("scroll", aboutOnScroll);
+document.addEventListener("scroll", awardOnScroll);
 navbarToggler.addEventListener("click", toggleNavbar);
