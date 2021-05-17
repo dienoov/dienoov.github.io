@@ -1,4 +1,10 @@
-const loaded = () => document.body.classList.add("loaded");
+const loaded = () => {
+    document.body.classList.add("loaded")
+
+    if (screen.width < screen.height) {
+        setTimeout(() => aboutOnScroll(true), 1500);
+    }
+};
 
 const navbar = document.getElementById("navbar");
 const navbarOnScroll = () => {
@@ -18,6 +24,16 @@ const toggleNavbar = () => {
     navbarCollapse.classList.toggle("active");
 };
 
+const about = document.getElementById("about");
+const aboutOnScroll = (toggle = false) => {
+    if (scrollY > about.offsetTop / 3 || toggle) {
+        about.classList.add("scroll");
+    } else {
+        about.classList.remove("scroll");
+    }
+};
+
 window.addEventListener("load", loaded);
 document.addEventListener("scroll", navbarOnScroll);
+document.addEventListener("scroll", aboutOnScroll);
 navbarToggler.addEventListener("click", toggleNavbar);
