@@ -880,6 +880,114 @@ h2.title {
     }
 }
 
+.work .container {
+    overflow: hidden;
+}
+
+.work h2.title {
+    transform: translate(-100%);
+    transition: transform .3s ease-out;
+}
+
+.work h2.title::after {
+    content: "";
+    width: 100%;
+    height: .1rem;
+    background-color: currentColor;
+    display: block;
+    margin-top: 2rem;
+    transform: translate(250%);
+    transition: transform .6s ease-out;
+}
+
+.work .row {
+    transform: translateY(300%);
+    transition: transform .3s ease-out;
+}
+
+.work h3::before {
+    content: "";
+    width: 8rem;
+    height: .1rem;
+    opacity: .1;
+    background-color: var(--dark);
+    display: inline-block;
+    margin-bottom: .3rem;
+    margin-right: .6rem;
+}
+
+.work p {
+    margin-left: 8.6rem;
+}
+
+.work img {
+    width: 100%;
+    height: 16.5rem;
+    object-fit: cover;
+    object-position: top;
+    transition: object-position 1s ease-out;
+}
+
+.work img:hover {
+    object-position: bottom;
+    transition-duration: 10s;
+}
+
+.work.scroll h2.title, .work.scroll h2.title::after {
+    transform: translate(0);
+}
+
+.work.scroll h2.title::after {
+    transition-delay: .3s;
+}
+
+.work.scroll .row {
+    transform: translateY(0);
+}
+
+.work.scroll .row:nth-child(2) {
+    transition-delay: .3s;
+}
+
+.work.scroll .row:nth-child(3) {
+    transition-delay: .6s;
+}
+
+.work.scroll .row:nth-child(4) {
+    transition-delay: .9s;
+}
+
+@media screen and (max-width: 992px) {
+    .work img {
+        height: 14rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .work .row .col-md-6:first-child {
+        order: 1;
+        margin-top: .5rem;
+    }
+
+    .work h3::before {
+        display: none;
+    }
+
+    .work p {
+        margin-left: 0;
+    }
+
+    .work img {
+        height: 21.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .work img {
+        height: 12rem;
+    }
+}
+
 footer .logo {
     font-size: 3rem;
     font-weight: bold;
@@ -922,7 +1030,7 @@ footer .social li a:hover {
     opacity: .9;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     footer .container {
         flex-direction: column;
     }
