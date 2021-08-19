@@ -22,6 +22,7 @@ const navbarOnScroll = () => {
 
 const navbarToggler = document.getElementById("navbar-toggler");
 const navbarCollapse = document.getElementById("navbar-collapse");
+const navbarLinks = navbarCollapse.querySelectorAll(".nav-link");
 const toggleNavbar = () => {
     navbarToggler.classList.toggle("active");
     navbarCollapse.classList.toggle("active");
@@ -62,6 +63,12 @@ const work = document.getElementById("work");
 //         work.classList.remove("scroll");
 //     }
 // };
+
+navbarLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        navbarCollapse.classList.contains("active") && toggleNavbar();
+    });
+});
 
 window.addEventListener("load", loaded);
 document.addEventListener("scroll", navbarOnScroll);
