@@ -42,6 +42,7 @@ html {
 body {
   font-family: Butler, serif;
   margin: 0;
+  overflow-y: hidden;
 }
 
 .zh {
@@ -50,7 +51,12 @@ body {
 
 main {
   display: flex;
-  width: fit-content;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  & > div {
+    flex-shrink: 0;
+  }
 }
 
 .title {

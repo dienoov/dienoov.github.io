@@ -5,7 +5,7 @@
   .title {
     position: absolute;
     top: 2vh;
-    left: 2vh;
+    left: 1vh;
   }
 
   .content {
@@ -82,5 +82,16 @@
         line-height: 1.4;
       }
     }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2vh;
+    right: 0;
+    display: block;
+    width: .1vh;
+    height: 96vh;
+    background-color: black;
   }
 }
