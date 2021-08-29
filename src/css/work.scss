@@ -22,8 +22,10 @@
     h3 {
       position: absolute;
       font-weight: 400;
+      font-size: 2.2vh;
 
       & .zh {
+        font-size: 2vh;
         font-weight: 600;
 
         &::before {
@@ -97,6 +99,10 @@
     h3 {
       bottom: 75vh;
       right: 2vh;
+    }
+
+    &::after {
+      opacity: 1;
     }
   }
 
