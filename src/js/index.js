@@ -14,6 +14,22 @@ main.insertAdjacentHTML('beforeend', secondWorkTemplate());
 main.insertAdjacentHTML('beforeend', thirdWorkTemplate());
 main.insertAdjacentHTML('beforeend', aboutTemplate());
 
-main.addEventListener('wheel', (ev) => {
-  main.scrollLeft += ev.deltaY;
+const horizontalScroll = (ev) => { main.scrollLeft += ev.deltaY; };
+const resetScroll = () => {
+  window.scrollTo(0, 0);
+  main.scrollTo(0, 0);
+};
+
+if (window.screen.availHeight < window.screen.availWidth) {
+  main.addEventListener('wheel', horizontalScroll);
+}
+
+window.addEventListener('resize', () => {
+  if (window.screen.availHeight < window.screen.availWidth) {
+    resetScroll();
+    main.addEventListener('wheel', horizontalScroll);
+  } else {
+    resetScroll();
+    main.removeEventListener('wheel', horizontalScroll);
+  }
 });

@@ -44,6 +44,12 @@ body {
   margin: 0;
   overflow-y: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  @media (orientation: portrait) {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 
 .zh {
@@ -55,6 +61,12 @@ main {
   overflow-x: auto;
   overflow-y: hidden;
 
+  @media (orientation: portrait) {
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: column;
+  }
+
   & > div {
     flex-shrink: 0;
   }
@@ -64,9 +76,26 @@ main {
   font-size: 2vh;
   display: flex;
   writing-mode: vertical-rl;
+  position: absolute;
+  top: 2vh;
+  left: 1vh;
+
+  @media (orientation: portrait) {
+    writing-mode: horizontal-tb;
+    align-items: baseline;
+    position: static;
+    padding: 5vw;
+    font-size: 4vw;
+  }
 
   .zh + .en {
     padding-top: 2.5vh;
+
+    @media (orientation: portrait) {
+      padding-top: 0;
+      padding-left: 4vw;
+      font-size: 4.5vw;
+    }
   }
 
   .zh {

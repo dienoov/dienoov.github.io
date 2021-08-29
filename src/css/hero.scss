@@ -2,10 +2,8 @@
   width: 150vh;
   position: relative;
 
-  .title {
-    position: absolute;
-    top: 2vh;
-    left: 1vh;
+  @media (orientation: portrait) {
+    width: 100%;
   }
 
   .content {
@@ -15,10 +13,22 @@
     width: 110vh;
     height: 100vh;
 
+    @media (orientation: portrait) {
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding-right: 5vw;
+      padding-left: 5vw;
+    }
+
     h1 {
       font-size: 22vh;
       font-weight: 900;
       position: absolute;
+
+      @media (orientation: portrait) {
+        display: none;
+      }
 
       & span {
         position: absolute;
@@ -63,15 +73,26 @@
     h2 {
       font-size: 3vh;
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.1;
       position: absolute;
       height: 35vh;
       margin: 0;
+
+      @media (orientation: portrait) {
+        font-size: 9vw;
+        position: static;
+        height: auto;
+      }
 
       &.en {
         top: 12vh;
         right: 8vh;
         writing-mode: vertical-rl;
+
+        @media (orientation: portrait) {
+          margin-top: 20vw;
+          writing-mode: horizontal-tb;
+        }
       }
 
       &.zh {
@@ -80,6 +101,13 @@
         left: 0;
         writing-mode: vertical-rl;
         line-height: 1.4;
+
+        @media (orientation: portrait) {
+          margin-top: 5vw;
+          margin-bottom: 5vw;
+          font-size: 7vw;
+          writing-mode: horizontal-tb;
+        }
       }
     }
   }
@@ -93,5 +121,12 @@
     width: .1vh;
     height: 96vh;
     background-color: black;
+
+    @media (orientation: portrait) {
+      height: .1vw;
+      width: 100vw;
+      top: auto;
+      bottom: 0;
+    }
   }
 }
